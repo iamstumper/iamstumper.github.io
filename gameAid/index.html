@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>UI Mobile Testing</title>
+    <!--*****  CSS  *****-->
+    <!-- CSS - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+    <!-- Sidr - CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
+    <!-- CSS - DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/af-2.1.2/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/cr-1.3.2/fc-3.2.2/fh-3.1.2/kt-2.1.3/r-2.1.0/rr-1.1.2/sc-1.4.2/se-1.2.0/datatables.min.css"/>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!--*****  CORE CONTENT  *****-->
+    <div class="container">
+      <div class="tab-content secondary vtop">
+        <!--*****  ENTRY FORM - PLAYERS and MINIS per PLAYER  *****-->
+        <div class="tab-pane active card" id="mini_num" role="tabpanel">
+          <div class="card-header actGame">{actGame}</div>
+          <div class="card-block">
+            <blockquote class='card-blockquote'>
+              <form>
+                <div class="form-group">
+                  <label for="formGroupPlayersInput">How Many Players</label>
+                  <input type="text" class="form-control" id="formGroupPlayersInput" placeholder="enter # players">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupMinisInput">Minis Per Player</label>
+                  <input type="text" class="form-control" id="formGroupMinisInput" placeholder="enter # minis / player">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupMinisTotal">Total Number Of Minis</label>
+                  <input disabled type="text" class="form-control" id="formGroupMinisTotal" placeholder="total # minis">
+                </div>
+              </form>
+            </blockquote>
+          </div>
+        </div>
+        <!--*****  JQXTREES - MINI POOLS  *****-->
+        <div class="tab-pane card" id="mini_pool" role="tabpanel">
+          <div class="card-header actGame">{actGame}</div>
+          <div class="card-block">
+            <blockquote class='card-blockquote'>
+              jqxTree
+            </blockquote>
+          </div>
+        </div>
+        <!--*****  RANDOMIZE - RESULTS  *****-->
+        <div class="tab-pane card" id="mini_results" role="tabpanel">
+          <div class="card-header actGame">{actGame}</div>
+          <div class="card-block">
+            <blockquote class='card-blockquote'>
+              datatable
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--*****  BOOTSTRAP - NAVBAR  *****-->
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <div class="container1">
+        <div class="d-inline-block">
+          <button type="button" class="navbar-toggle-always collapsed menu-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar-always"></span>
+            <span class="icon-bar-always"></span>
+            <span class="icon-bar-always"></span>
+          </button>
+        </div>
+        <div class="d-inline-block navbar_title">
+          <a id="gameAid-menu" class="menu-toggle" href="#sidr">
+            <h4>gameAid</h4>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="navbar-fixed-top secondary">
+      <div class="container">
+        <button id="btn_players" type="button" class="btn btn-primary">Players</button>
+        <button id="btn_minis" type="button" class="btn btn-primary">Minis</button>
+        <button id="btn_randomize" type="button" class="btn btn-success">Randomize !!!</button>
+      </div>
+    </div>
+    <!--*****  SIDR - menu  *****-->
+    <div id="sidr">
+      <!-- Your content -->
+      <div class="text-xs-center">
+        <h1>gameAid</h1>
+        <small>choose your game</small>
+        <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+      </div>
+      <ul id="menu-items"></ul>
+    </div>
+    <!--*****  MODAL  *****-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div id="modal-body" class="modal-body">
+            <table width="100%" cellspacing="0" class="table-minis table table-striped table-bordered display stripe survivor_table"></table>
+          </div>
+          <div class="modal-footer">
+            <button id="button_redo" target="#myModal" onclick="action_jumble();" type="button" class="btn btn-primary">Redo It !!!</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--*****  JS  *****-->
+    <script src="data_ref.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/af-2.1.2/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/cr-1.3.2/fc-3.2.2/fh-3.1.2/kt-2.1.3/r-2.1.0/rr-1.1.2/sc-1.4.2/se-1.2.0/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+    <!-- Include the Sidr JS -->
+    <script src="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+    <script src="script-1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+body {
+  padding-top: 6.2rem;
+  background: #fafafa;
+}
+.navbar-fixed-top.secondary {
+  margin-top: 3.5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.navbar_title {
+  margin-left: 10px;
+}
+.navbar_title a,
+.navbar_title a:hover {
+  color:whitesmoke;
+  text-decoration: none;
+}
+.vtop {
+  display: inline-block;
+  vertical-align:top;
+  float: none;
+}
+/******  NAVBAR  ******/
+.navbar-toggle-always:hover,
+.navbar-toggle-always:focus {
+  background-color: #333333;
+}
+.navbar-toggle-always {
+/*  position: relative; */
+/*  float: left; */
+/*  margin-right: 15px; */
+  padding: 9px 10px; 
+/*  margin-top: 8px; */
+/*  margin-bottom: 8px; */
+/*  margin-left: 0; */
+/*  margin-right: 0; */
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.navbar-toggle-always:focus {
+  outline: 0;
+}
+.navbar-toggle-always .icon-bar-always {
+  width: 22px;
+  height: 2px;
+  border: 1px solid gray;
+  display: block;
+  border-radius: 1px;
+}
+.navbar-toggle-always .icon-bar-always + .icon-bar-always {
+  margin-top: 4px;
+}
+.nav.secondary {
+  background-color: transparent;
+}
