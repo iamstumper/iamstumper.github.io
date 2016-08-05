@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gameAid</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <p>game_active = <span class='game_active'>{none}</span></p>
+        <p>game_minis =</p>
+        <ul class='game_minis'></ul>
+        
+        <!-- Nav pills -->
+        <ul class='nav nav-pills' role='tablist'>
+        	<li class='nav-item'><a class='nav-link active' data-toggle='tab' role='tab' href='#s1'>Step 1</a></li>
+        	<li class='nav-item'><a class='nav-link' data-toggle='tab' role='tab' href='#s2'>Step 2</a></li>
+        </ul>
+        <!-- pill panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="s1" role="tabpanel">step 1 stuff goes here ...</div>
+  <div class="tab-pane" id="s2" role="tabpanel">step 2 stuff goes here ...</div>
+</div>
+        <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+			<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+				&#9776;
+			</button>
+			<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+				<a class="navbar-brand" href="#">gameAid</a>
+				<ul class="nav navbar-nav"></ul>
+			</div>
+		</nav>
+
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-3.1.0.min.js"><\/script>')</script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/data_ref.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview');
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
