@@ -9,7 +9,7 @@ $(document).ready(function() {
   //alert(document.body.contains(document.getElementById('mini_pool')));
   
   // INITIALIZE
-  minis_all.sort();
+  minis_all = sortByAttribute(minis_all,['game','set', 'subset', 'mini_name']);
   createMenuItems();
   createJQXTrees();
   // INITIALIZE - jqxtree
@@ -328,4 +328,39 @@ function rawOutput(minis) {
     temp = '<li>' + mini.mini_name + ' :: ' + mini.game + ' :: ' + mini.set + ' :: ' + mini.subset + ' :: ' + mini.own + ' :: ' + mini.use + '</li>';
     $('ul.minis_activeGame').append(temp);
   };
+}
+function sortByAttribute(array, attrs) {
+  // If we get an invalid argument
+  if (!Array.isArray(array)) return array;
+  attrs = 'string' == typeof attrs ? [attrs] : attrs;
+  // Generate array of predicate-objects contains
+  // property getter, and descending indicator
+  let predicates = attrs.map(function(pred) {
+    let descending = pred.charAt(0) === '-' ? -1 : 1;
+    pred = pred.replace(/^-/, '');
+    return {
+      getter: function(o) { return o[pred]; },
+      descend: descending
+    };
+  });
+  // Schwartzian transform idiom implementation
+  // also known as known as decorate-sort-undecorate
+  return array.map(function(item) {
+    return {
+      src: item,
+      compareValues: predicates.map(function(predicate) {
+        return predicate.getter(item);
+      })
+    };
+  }).sort(function(o1, o2) {
+    let i = -1, result = 0;
+    while (++i < predicates.length) {
+      if (o1.compareValues[i] < o2.compareValues[i]) result = -1;
+      if (o1.compareValues[i] > o2.compareValues[i]) result = 1;
+      if (result *= predicates[i].descend) break;
+    }
+    return result;
+  }).map(function (item) {
+    return item.src;
+  });
 }
