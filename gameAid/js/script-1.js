@@ -2,13 +2,14 @@
 var actGame = '';
 var table = '';
 var actGameMinis = '';
+var minis_all = gameData_ref.slice();
 // READY - for jquery
 $(document).ready(function() {
   //document.documentElement.addEventListener('DOMAttrModified', function(e){ ?????
   //alert(document.body.contains(document.getElementById('mini_pool')));
   
   // INITIALIZE
-  gameData_ref = gameData_ref.sort();
+  minis_all.sort();
   createMenuItems();
   createJQXTrees();
   // INITIALIZE - jqxtree
@@ -90,7 +91,7 @@ $(document).ready(function() {
     id = id.replace(/_/g,' ');
     actGame = id;
     $('.actGame').html(actGame);
-    actGameMinis = $.grep(gameData_ref, function (o) { return o.game == actGame; });
+    actGameMinis = $.grep(minis_all, function (o) { return o.game == actGame; });
     // HIDE - initText
     $('.initText').addClass('hidden');
     // SHOW jqxTree_{actGame}
@@ -141,8 +142,8 @@ $(document).ready(function() {
 function createMenuItems() {
   $('#sidr menu-items').html('');
   var gamesMap = {};
-  for (var i = 0; i < gameData_ref.length; i++) {
-    var value = gameData_ref[i].game;
+  for (var i = 0; i < minis_all.length; i++) {
+    var value = minis_all[i].game;
     gamesMap[value] = "";
   }
   var games = Object.keys(gamesMap);
@@ -162,8 +163,8 @@ function createJQXTrees() {
   var oldGame = '';
   var oldSet = '';
   var oldSubset = '';
-  for (iM in gameData_ref) {
-    var item = gameData_ref[iM];
+  for (iM in minis_all) {
+    var item = minis_all[iM];
     var game = item.game;
     var xGame = game.replace(/\s/g, '_');
     var set = item.set;
