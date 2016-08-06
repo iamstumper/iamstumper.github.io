@@ -8,6 +8,7 @@ $(document).ready(function() {
   //alert(document.body.contains(document.getElementById('mini_pool')));
   
   // INITIALIZE
+  gameData_ref = gameData_ref.sort();
   createMenuItems();
   createJQXTrees();
   // INITIALIZE - jqxtree
@@ -62,7 +63,7 @@ $(document).ready(function() {
   // MODAL - when modal becomes visible
   $('#myModal').on('shown.bs.modal', function (e) {
     table.columns.adjust().draw();
-  })
+  });
   $("#myModal").on('show.bs.modal', function () {
     $(this).show();
     setModalMaxHeight(this);
@@ -167,7 +168,7 @@ function createJQXTrees() {
     var xGame = game.replace(/\s/g, '_');
     var set = item.set;
     var xSet = set.replace(/\s/g, '_');
-    var subset = item.subset
+    var subset = item.subset;
     var xSubset = subset.replace(/\s/g, '_');
     var mini_name = item.mini_name;
     var xMini_name = mini_name.replace(/\s/g, '_');
@@ -182,7 +183,7 @@ function createJQXTrees() {
       $('#jqxTree-' + xGame + ' #setList-' + xGame).append('<li id="set-' + xSet + '" item-checked="true" item-expanded="true" class="set"><a href="#">' + set + '</a>');
       $('#jqxTree-' + xGame + ' #set-' + xSet).append('<ul id="subsetList-' + xSet + '"></ul>');
       oldSet = xSet;
-      oldSubset = ''
+      oldSubset = '';
     }
     if (oldSubset != xSubset) {
       $('#jqxTree-' + xGame + ' #setList-' + xGame + ' #subsetList-' + xSet).append('<li id="subset-' + xSubset + '" class="subset"><a href="#">' + subset + '</a>');
