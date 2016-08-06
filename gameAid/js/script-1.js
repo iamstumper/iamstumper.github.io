@@ -76,7 +76,9 @@ $(document).ready(function() {
 	$('.nav-pills a').on('shown.bs.tab', function (e) {
 		var x = $(e.target).text();         // active tab
 		var y = $(e.relatedTarget).text();  // previous tab
-		alert("new tab = " + x);
+		if(actGame != '' && x == 'Minis'){
+			$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('collapseAll');
+		}
 	});
   // RESIZE - window
   $(window).resize(function() {
