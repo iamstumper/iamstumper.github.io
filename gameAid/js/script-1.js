@@ -73,11 +73,11 @@ $(document).ready(function() {
     $.sidr('close', 'sidr');
   });
   // CARDS - when cards are shown
-$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  e.target; // newly activated tab
-  e.relatedTarget; // previous active tab
-  alert("new tab = " + e.target);
-});
+	$('.nav-pills a').on('shown.bs.tab', function (e) {
+		var x = $(e.target).text();         // active tab
+		var y = $(e.relatedTarget).text();  // previous tab
+		alert("new tab = " + x);
+	});
   // RESIZE - window
   $(window).resize(function() {
     if ($('.modal.in').length != 0) {
