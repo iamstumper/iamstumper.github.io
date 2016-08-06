@@ -93,7 +93,8 @@ $(document).ready(function() {
     $('.actGame').html(actGame);
     actGameMinis = $.grep(minis_all, function (o) { return o.game == actGame; });
     // HIDE - initText
-    $('.initText').addClass('hidden');
+    //$('.initText').addClass('hidden');
+    $('.initText').hide();
     // SHOW jqxTree_{actGame}
     $('div[id^="jqxTree-"]').addClass('hidden');
     $('div#jqxTree-' + actGame.replace(/\s/g, '_')).removeClass('hidden');
