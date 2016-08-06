@@ -1,7 +1,7 @@
 .hidden{
   display: none;
 }
-sbs {
+.sbs {
 	display: inline-block;
 }
 .dataTables_scrollHead table {
