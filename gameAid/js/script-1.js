@@ -102,8 +102,9 @@ $(document).ready(function() {
     // SHOW jqxTree_{actGame}
     $('div[id^="jqxTree-"]').addClass('hidden');
     $('div#jqxTree-' + actGame.replace(/\s/g, '_')).removeClass('hidden');
-//    $('div#jqxTree-' + actGame.replace(/\s/g, '_')).jqxTree('collapseAll');
-//    $('div#jqxTree-' + actGame.replace(/\s/g, '_')).jqxTree('expandAll');
+	$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('collapseAll');
+	$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('expandAll');
+	$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('collapseAll');
   });
   // CLICK - secondary buttons (player, minis, randomize, redo it)
   $('#btn_randomize').on('click', function (e) {
