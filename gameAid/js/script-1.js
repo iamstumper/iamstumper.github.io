@@ -255,9 +255,11 @@ function clickRandomize(thisItem, thisEvent) {
     //		valid = false;
     //		err.push('Total number of minis must be a number and greater than 0');
     //	}
-    if (tm > actGameMinis.length && actGame != '') {
+    var minis = actGameMinis.slice();
+    minis = $.grep(minis, function (o) { return (o.game == actGame, o.use == true); });
+    if (tm > minis.length && actGame != '') {
       valid = false;
-      err.push('Total (' + tm + ') is too high, you only have ' + actGameMinis.length + ' minis');
+      err.push('Total (' + tm + ') is too high, you only have ' + minis.length + ' minis');
     }
   }
   if (!valid) {
