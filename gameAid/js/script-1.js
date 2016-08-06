@@ -73,11 +73,11 @@ $(document).ready(function() {
     $.sidr('close', 'sidr');
   });
   // CARDS - when cards are shown
-  $('#mini_pool').on('show',function(){
-      alert('here me');
-      //    $('div[id^="jqxTree-"]').jqxTree('collapseAll');
-      //    $('div[id^="jqxTree-"]').jqxTree('expandAll');
-  });
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  e.target; // newly activated tab
+  e.relatedTarget; // previous active tab
+  alert("new tab = " + e.target);
+});
   // RESIZE - window
   $(window).resize(function() {
     if ($('.modal.in').length != 0) {
@@ -102,20 +102,8 @@ $(document).ready(function() {
 //    $('div#jqxTree-' + actGame.replace(/\s/g, '_')).jqxTree('expandAll');
   });
   // CLICK - secondary buttons (player, minis, randomize, redo it)
-  $('.btn1').on('click', function (e) {
-    this.blur();
-    e.preventDefault();
-    var id = $(this).attr('id');
-    if (id=='btn_randomize'){
+  $('#btn_randomize').on('click', function (e) {
       clickRandomize(this,e);
-//      var minis = actGameMinis.slice();
-//      minis = shuffle(minis);
-//      table.clear().rows.add(minis).draw(false);
-//      $('#myModal').modal({show: true, backdrop:'static'});
-    } else {
-      if (id=='btn_players'){$('.card').removeClass('active');$('#mini_num').addClass('active');};
-      if (id=='btn_minis'){$('.card').removeClass('active');$('#mini_pool').addClass('active');};
-    };
   });
   // CLICK - jqxTree label
   $('.jqx-tree').on('itemClick', function (event) {
