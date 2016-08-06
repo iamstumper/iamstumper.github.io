@@ -78,6 +78,8 @@ $(document).ready(function() {
 		var y = $(e.relatedTarget).text();  // previous tab
 		if(actGame != '' && x == 'Minis'){
 			$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('collapseAll');
+			$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('expandAll');
+			$('#jqxTree-' + actGame.replace(/\s/g,'_')).jqxTree('collapseAll');
 		}
 	});
   // RESIZE - window
