@@ -1,6 +1,9 @@
 .hidden{
   display: none;
 }
+sbs {
+	display: inline-block;
+}
 .dataTables_scrollHead table {
   margin-bottom: 0px;
 }
