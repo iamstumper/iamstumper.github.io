@@ -259,7 +259,7 @@ function clickRandomize(thisItem, thisEvent) {
     minis = $.grep(minis, function (o) { return (o.game == actGame, o.use == true); });
     if (tm > minis.length && actGame != '') {
       valid = false;
-      err.push('Total (' + tm + ') is too high, you only have ' + minis.length + ' minis');
+      err.push('Total Number of Minis (' + tm + ') is too high, you only have ' + minis.length + ' minis to choose from');
     }
   }
   if (!valid) {
