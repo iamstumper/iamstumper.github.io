@@ -102,7 +102,7 @@ $(document).ready(function() {
 //    $('div#jqxTree-' + actGame.replace(/\s/g, '_')).jqxTree('expandAll');
   });
   // CLICK - secondary buttons (player, minis, randomize, redo it)
-  $('.btn').on('click', function (e) {
+  $('.btn1').on('click', function (e) {
     this.blur();
     e.preventDefault();
     var id = $(this).attr('id');

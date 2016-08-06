@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>UI Mobile Testing</title>
-    <!--*****  CSS  *****-->
-    <!-- CSS - Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" />
-    <!-- CSS - Sidr -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css" />
-    <!-- CSS - DATATABLES -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap4.min.css" />
-    <!-- CSS - JQWIDGETS -->
-    <link href="https://jqwidgets.com/public/jqwidgets/styles/jqx.base.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!--*****  CORE CONTENT  *****-->
-    <div class="container pull-xs-left">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>UI Mobile Testing</title>
+		<!--*****  CSS  *****-->
+		<!-- CSS - Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" />
+		<!-- CSS - Sidr -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css" />
+		<!-- CSS - DATATABLES -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap4.min.css" />
+		<!-- CSS - JQWIDGETS -->
+		<link href="https://jqwidgets.com/public/jqwidgets/styles/jqx.base.css" rel="stylesheet" />
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!--*****  CORE CONTENT  *****-->
+		<div class="container pull-xs-left">
+	        <!--*****  TABS  *****-->
 			<div class="tab-content">
+		        <!--*****  TABS - entry form  *****-->
 				<div class="tab-pane active card card-fixed" id="mini_num" role="tabpanel">
 					<div class="card-header actGame">
 						{actGame}
@@ -46,96 +48,98 @@
 						</blockquote>
 					</div>
 				</div>
+		        <!--*****  TABS - jqxtree  *****-->
 				<div class="tab-pane card card-fixed" id="mini_pool" role="tabpanel">
-          <div class="card-header actGame">{actGame}</div>
-          <div class="card-block">
-            <blockquote class='card-blockquote'>
-              <div class="initText">
-                To edit the Mini Pool, be sure to select a game from menu above <span class="activeGame"></span>
-              </div>
-              <div id="jqxTrees"></div>
-            </blockquote>
-          </div>
+					<div class="card-header actGame">
+						{actGame}
+					</div>
+					<div class="card-block">
+						<blockquote class='card-blockquote'>
+							<div class="initText">
+								To edit the Mini Pool, be sure to select a game from menu above <span class="activeGame"></span>
+							</div>
+							<div id="jqxTrees"></div>
+						</blockquote>
+					</div>
+				</div>
+			</div> <!-- tabs -->
+		</div> <!-- core content -->
+		<!--*****  NAVBAR  *****-->
+		<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+			<div class="container1">
+				<div class="d-inline-block">
+					<button type="button" class="navbar-toggle-always collapsed menu-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar-always"></span>
+						<span class="icon-bar-always"></span>
+						<span class="icon-bar-always"></span>
+					</button>
+				</div>
+				<div class="d-inline-block navbar_title">
+					<a id="gameAid-menu" class="menu-toggle" href="#sidr"> <h4>gameAid</h4> </a>
 				</div>
 			</div>
-    </div>
-    <!--*****  BOOTSTRAP - NAVBAR  *****-->
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <div class="container1">
-        <div class="d-inline-block">
-          <button type="button" class="navbar-toggle-always collapsed menu-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar-always"></span>
-            <span class="icon-bar-always"></span>
-            <span class="icon-bar-always"></span>
-          </button>
-        </div>
-        <div class="d-inline-block navbar_title">
-          <a id="gameAid-menu" class="menu-toggle" href="#sidr">
-            <h4>gameAid</h4>
-          </a>
-        </div>
-      </div>
-      <div class="myTest">
-      	<div style="display: block;">
-				<ul class="nav nav-pills" id="myTab" role="tablist" style="display: inline-block;">
-					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#mini_num" role="tab" aria-controls="mini_num">Players</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#mini_pool" role="tab" aria-controls="mini_pool">Minis</a>
-					</li>
-				</ul>
-				<button id="btn_randomize" type="button" class="btn btn-success" style="display: inline-block; vertical-align:top;">
-					Randomize !!!
-				</button>
+			<div class="myTest">
+				<div style="display: block;">
+					<ul class="nav nav-pills" id="myTab" role="tablist" style="display: inline-block;">
+						<li class="nav-item">
+							<a class="nav-link active" data-toggle="tab" href="#mini_num" role="tab" aria-controls="mini_num">Players</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#mini_pool" role="tab" aria-controls="mini_pool">Minis</a>
+						</li>
+					</ul>
+					<button id="btn_randomize" type="button" class="btn btn-success" style="display: inline-block; vertical-align:top;">
+						Randomize !!!
+					</button>
+				</div>
 			</div>
-		<!--
-        <button id="btn_players" type="button" class="btn btn-primary">Players</button>
-        <button id="btn_minis" type="button" class="btn btn-primary">Minis</button>
-        <button id="btn_randomize" type="button" class="btn btn-success">Randomize !!!</button>
-       -->
-      </div>
-    </nav>
-    <!--*****  SIDR - menu  *****-->
-    <div id="sidr">
-      <!-- Your content -->
-      <div class="text-xs-center">
-        <h1>gameAid</h1>
-        <small>choose your game</small>
-        <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
-      </div>
-      <ul id="menu-items"></ul>
-    </div>
-    <!--*****  MODAL  *****-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" id="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div>
-          <div id="modal-body" class="container"></div>
-          <div id="modal-table" class="hidden container">
-            <table width="100%" cellspacing="0" class="table-minis table table-striped table-bordered"></table>
-          </div>
-          <div class="modal-footer">
-            <button id="btn_randomize" type="button" class="btn btn-success .secondary">Redo It !!!</button>
-            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--*****  JS  *****-->
-    <script src="js/data_ref.js"></script>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
-    <script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
-    <script src="js/script-1.js"></script>
-  </body>
+		</nav>
+		<!--*****  SIDR - menu  *****-->
+		<div id="sidr">
+			<!-- Your content -->
+			<div class="text-xs-center">
+				<h1>gameAid</h1>
+				<small>choose your game</small>
+				<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+			</div>
+			<ul id="menu-items"></ul>
+		</div>
+		<!--*****  MODAL  *****-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header" id="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					</div>
+					<div id="modal-body" class="container"></div>
+					<div id="modal-table" class="hidden container">
+						<table width="100%" cellspacing="0" class="table-minis table table-striped table-bordered"></table>
+					</div>
+					<div class="modal-footer">
+						<button id="btn_randomize" type="button" class="btn btn-success .secondary">
+							Redo It !!!
+						</button>
+						<button type="button" class="btn btn-warning" data-dismiss="modal">
+							Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--*****  JS  *****-->
+		<script src="js/data_ref.js"></script>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
+		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+		<script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js" type="text/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+		<script src="js/script-1.js"></script>
+	</body>
 </html>
