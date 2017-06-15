@@ -1,3 +1,5 @@
-$( document ).ready(function() {
-  alert('here!');
-});
+<script>
+  $( document ).ready(function() {
+    alert('here!');
+  });
+</script>
